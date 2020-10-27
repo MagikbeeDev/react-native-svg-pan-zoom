@@ -15,6 +15,7 @@ export interface Props {
     viewStyle?: ViewStyle;
     viewBox?: string;
     onZoom?: (zoom: number) => void;
+    onMove?: () => void;
 }
 export interface State {
     layoutKnown: boolean;

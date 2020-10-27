@@ -132,6 +132,7 @@ export default class SvgPanZoom extends Component {
                     initialGestureState: { dy: 0, dx: 0 },
                     initialTransform: this.state.viewTransform,
                 });
+                this.props.onMove();
                 return;
             }
             const { viewTransform, initialGestureState, initialTransform, viewDimensions } = this.state;
