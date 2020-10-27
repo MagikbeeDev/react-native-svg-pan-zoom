@@ -13,6 +13,7 @@ export interface Props {
     canvasWidth?: number;
     canvasStyle?: ViewStyle;
     viewStyle?: ViewStyle;
+    viewBox?: string;
     onZoom?: (zoom: number) => void;
 }
 export interface State {

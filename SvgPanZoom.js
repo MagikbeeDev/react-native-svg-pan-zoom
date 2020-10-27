@@ -229,7 +229,7 @@ export default class SvgPanZoom extends Component {
         });
     }
     render() {
-        const { canvasHeight, canvasWidth, viewStyle, canvasStyle, children, } = this.props;
+        const { canvasHeight, canvasWidth, viewStyle, canvasStyle, children, viewBox} = this.props;
         return (<View ref={v => this.mainViewRef = v} style={StyleSheet.flatten([
             {
                 flex: 1,
@@ -244,11 +244,14 @@ export default class SvgPanZoom extends Component {
                 { translateY: this.state.TranslationAnimation.y },
                 { scale: this.state.scaleAnimation }
             ] }, canvasStyle)}>
-          <SvgView style={{
-            width: canvasWidth,
-            height: canvasHeight,
-        }}>
-            {children}
+            <SvgView 
+                style={{
+                    width: canvasWidth,
+                    height: canvasHeight,
+                }}
+                viewBox={viewBox}
+            >
+                {children}
           </SvgView>
         </Animated.View>
 
