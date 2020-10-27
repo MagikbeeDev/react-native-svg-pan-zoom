@@ -202,11 +202,11 @@ export default class SvgPanZoom extends Component {
                     this.dropNextEvt--;
                     return;
                 }
-                //Child element events are bubbled up but are not valid in out context. Sort them out
-                if (evt.target !== this.prTargetSelf && evt.target !== this.prTargetOuter) {
-                    this.dropNextEvt++;
-                    return;
-                }
+                // //Child element events are bubbled up but are not valid in out context. Sort them out
+                // if (evt.target !== this.prTargetSelf && evt.target !== this.prTargetOuter) {
+                //     this.dropNextEvt++;
+                //     return;
+                // }
                 //HACK: the native event has some glitches with far-off coordinates. Sort out the worst ones
                 if ((Math.abs(gestureState.vx) + Math.abs(gestureState.vx)) > 6) {
                     this.dropNextEvt++;
